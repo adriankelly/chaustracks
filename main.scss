@@ -1,0 +1,166 @@
+/*
+    Theme Name: chaustracks
+    Author: Adrian Kelly
+    Author URL: http://adriankelly.net
+    Description: Tunes from around the web, delivered to your doorstep
+ */
+
+$font-stack: 'Lato', sans-serif;
+$primary-color: #333;
+$post-title-color: tomato;
+$breakpoint-tablet: 768px;
+
+body {
+    font: 62.5% $font-stack;
+    color: $primary-color;
+    max-width: 1280px;
+    padding-bottom: 20px;
+}
+
+.jumbotron {
+
+    @media (min-width: $breakpoint-tablet) {
+        height: 520px;
+        background: transparent;
+
+        h1 {
+            font-size: 9rem;
+            line-height: 7rem;
+            font-weight: 500;
+        }
+        small {
+            font-size: 1.8rem;
+            font-weight: 300;
+            padding-left: 6px;
+            letter-spacing: 0.4rem;
+        }
+    }       
+}
+
+
+
+.bg {
+    
+    @media (min-width: $breakpoint-tablet) {
+        background: url('images/vinyl1.jpg') no-repeat center center;
+        width: 100%;
+        z-index: -1;
+        height: 520px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }    
+}
+
+
+
+.titles-wrap {
+
+    @media (min-width: $breakpoint-tablet) {
+        margin-top: 330px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 10px;
+        color: #fff;
+        /*background: rgba(255, 255, 255, 0.3);*/
+        display: inline-block;
+    }
+}
+
+
+header {
+    @media (min-width: $breakpoint-tablet) {
+        height: 520px;
+    }
+}
+
+
+.container {
+    max-width: 960px;
+}
+
+
+
+.nav {
+    
+    @media (min-width: $breakpoint-tablet) {
+        .current-menu-item {
+            > a {
+                background: white;
+                font-size: 1.8rem;
+            }
+        }
+
+
+
+    }
+}
+
+
+.nav-pills {
+    background-color: #DBDBDB;
+    li a {
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 1.3rem;
+    }
+}
+
+
+.navbar-collapse {
+  padding-left: 2px;
+}
+
+.nav-wrap {
+    min-height: 80px;
+
+    .affix {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+    }
+}
+
+
+/* MAY NEED TO REMOVE THE DIV REFERENCE ONCE
+CONTENT IS DISPLAYED ACCORDING TO THE POST
+TEMPLATE */
+
+    @media (min-width: $breakpoint-tablet) {
+        
+        .post {
+            margin-bottom: 40px;
+
+            .post-byline {
+                font-size: 1.2rem;
+                margin-left: 2px;
+                
+                a {
+                    display: block;
+                }
+            }
+
+            div {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+
+
+.post iframe {
+  display: block;
+  margin: 0 auto;
+  max-width: 445px;
+  max-height: 300px;
+}
+
+
+.copyright {
+  margin-left: 50px;
+  font-size: 1.3rem;
+}
+
+
+

@@ -1,0 +1,100 @@
+/*
+    Theme Name: chaustracks
+    Author: Adrian Kelly
+    Author URL: http://adriankelly.net
+    Description: Tunes from around the web, delivered to your doorstep
+ */
+body {
+  font: 62.5% "Lato", sans-serif;
+  color: #333;
+  max-width: 1280px;
+  padding-bottom: 20px; }
+
+@media (min-width: 768px) {
+  .jumbotron {
+    height: 520px;
+    background: transparent; }
+    .jumbotron h1 {
+      font-size: 9rem;
+      line-height: 7rem;
+      font-weight: 500; }
+    .jumbotron small {
+      font-size: 1.8rem;
+      font-weight: 300;
+      padding-left: 6px;
+      letter-spacing: 0.4rem; } }
+
+@media (min-width: 768px) {
+  .bg {
+    background: url("images/vinyl1.jpg") no-repeat center center;
+    width: 100%;
+    z-index: -1;
+    height: 520px;
+    position: fixed;
+    top: 0;
+    left: 0; } }
+
+@media (min-width: 768px) {
+  .titles-wrap {
+    margin-top: 330px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    color: #fff;
+    /*background: rgba(255, 255, 255, 0.3);*/
+    display: inline-block; } }
+
+@media (min-width: 768px) {
+  header {
+    height: 520px; } }
+
+.container {
+  max-width: 960px; }
+
+@media (min-width: 768px) {
+  .nav .current-menu-item > a {
+    background: white;
+    font-size: 1.8rem; } }
+
+.nav-pills {
+  background-color: #DBDBDB; }
+  .nav-pills li a {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 1.3rem; }
+
+.navbar-collapse {
+  padding-left: 2px; }
+
+.nav-wrap {
+  min-height: 80px; }
+  .nav-wrap .affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; }
+
+/* MAY NEED TO REMOVE THE DIV REFERENCE ONCE
+CONTENT IS DISPLAYED ACCORDING TO THE POST
+TEMPLATE */
+@media (min-width: 768px) {
+  .post {
+    margin-bottom: 40px; }
+    .post .post-byline {
+      font-size: 1.2rem;
+      margin-left: 2px; }
+      .post .post-byline a {
+        display: block; }
+    .post div {
+      font-size: 1.5rem; } }
+.post iframe {
+  display: block;
+  margin: 0 auto;
+  max-width: 445px;
+  max-height: 300px; }
+
+.copyright {
+  margin-left: 50px;
+  font-size: 1.3rem; }
+
+/*# sourceMappingURL=main.css.map */
