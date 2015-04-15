@@ -13,31 +13,19 @@ Template Name: Archives
 
 <?php get_header(); ?>
 
+    <div class="container">
+        <div class="row">
+            <select class="archives-month">
+                <option><?php echo esc_attr( __( 'Select Month' ) ); ?></option> 
+
+                <?php wp_get_archives( array( 'type' => 'monthly', 'format' => 'option', 'show_post_count' => 1 ) ); ?>
+                
+            </select>
 
 
+<div class="ajax-target"></div>
 
-<div id="container">
-  <div id="content" role="main">
-
-    
-    <h1 class="entry-title"><?php the_title(); ?></h1>
-    
-    <h2>Archives by Month:</h2>
-    <ul class="archive-month-list">
-      <?php wp_get_archives('type=monthly'); ?>
-    </ul>
-
-    <div class="archive-target">
-      
-    </div>
-
-
-
-
-  </div><!-- #content -->
-</div><!-- #container -->
-
-
-
+        </div> <!-- .row -->
+    </div> <!-- .container -->
 
 <?php get_footer(); ?>

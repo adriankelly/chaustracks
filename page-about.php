@@ -1,35 +1,26 @@
 <?php
 
-/*
-  Template Name: About
-*/
+    /*
+    Template Name: About
+    */
 
 ?>
 
-<?php get_header(); ?> 
+<?php get_header(); ?>
+
     <div class="container">
-    <div class="row">
-        <div class="col-md-12">  
+        <div class="row">
+            
+            <div class="col-md-12">  
 
-<?php
-        if ( have_posts() ) :
-            while ( have_posts() ) : the_post();
+                <p>Content to go here yo Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commod sequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-              // Display content of page
-              get_template_part( 'content', get_post_format() ); 
-              wp_reset_postdata();
-  
-            endwhile;
-        endif;
-?>
 
-<p>HELLO</p>
 
-        </div> <!-- .col-md-12 -->
+            </div> <!-- .col-md-12 -->
 
-    </div> <!-- .row -->
+        </div> <!-- .row -->
     </div> <!-- .container -->
 
-
-
 <?php get_footer(); ?>
+
