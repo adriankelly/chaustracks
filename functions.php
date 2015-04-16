@@ -41,63 +41,21 @@
 
 
         // My JS
-        // wp_register_script( 'script_js', get_template_directory_uri() . '/script.js', array( 'jquery' ), '', true );
-
         wp_enqueue_script( 'script_js', get_template_directory_uri() . '/script.js', array( 'jquery' ), null, true );
-       
-
-        // AJAX inifinte scroll 
-        // wp_enqueue_script( 'wpa56343_script', get_template_directory_uri() . '/script.js', array( 'jquery' ), null, true );
-        // wp_localize_script( 'wpa56343_script', 'WPaAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ))); 
         
-        if ( is_home() ) {
-            wp_enqueue_script( 'ajax_js', get_template_directory_uri() . '/ajax.js', array( 'jquery' ), null, true );
-            wp_localize_script( 'ajax_js', 'scrollAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ))); 
-
-            }
-
-            // Change WPaAjax
-
-
         // Archives AJAX load posts
         if ( is_page( 'archives' ) ) {
             wp_enqueue_script( 'archives_js', get_template_directory_uri() . '/archives.js', array( 'jquery' ), null, true );
             wp_localize_script( 'archives_js', 'archivesAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ))); 
-
-            }
+        }
 
     } // End of function theme_js
     add_action( 'wp_enqueue_scripts', 'theme_js');
 
 
 
-
 /**
- * AJAX Infinite scroll
- */
-    
-
-    function load_more(){
-        
-            global $wp_query;
-
-            $offset = $_POST['postoffset'];
-            $args = array( 'offset' => $offset, 'posts_per_page' => 2 );
-            $wp_query = new WP_Query( $args );
-            
-            get_template_part( 'post-template' );
-
-            exit;
-        
-    } // End of function load_more
-    add_action('wp_ajax_load_more', 'load_more');
-    add_action('wp_ajax_nopriv_load_more', 'load_more');
-
-
-
-
-/**
- * Menus section in wp-admin
+ * Add menus section to wp-admin
  */
 
     function home_page_menu_args( $args ) {
@@ -150,6 +108,26 @@
     } // End of function load_archives
     add_action('wp_ajax_load_archives', 'load_archives');
     add_action('wp_ajax_nopriv_load_archives', 'load_archives');
+
+
+
+/**
+ * Front Page Loader
+ */
+
+    function load_home_posts(){ 
+        $loopFile        = $_POST['loop_file'];
+        $paged           = $_POST['page_no'];
+        $posts_per_page  = get_option('posts_per_page');
+
+        query_posts(array('paged' => $paged )); 
+        
+        get_template_part( 'post-template' );
+        
+        exit;
+    }
+    add_action('wp_ajax_load_home_posts', 'load_home_posts');
+    add_action('wp_ajax_nopriv_load_home_posts', 'load_home_posts');
 
 
 ?>
