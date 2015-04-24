@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 
           options: {
             // Task-specific options go here.
-            browsers: ['last 2 versions', 'ie 8', 'ie 9']
+            browsers: ['last 2 versions']
           },
           multiple_files: {
             expand: true,

@@ -1,4 +1,5 @@
 (function ($) {
+    
     $('.archives-month').change(function() {
         
         $('.infinite-load').css('display', 'initial').hide('900');
@@ -19,6 +20,12 @@
                 $('.ajax-target').empty().append( response );
             }
         )
-    });
 
+// Auto-scroll to top of first post on archives page
+        $('html, body').animate({
+            scrollTop: $('.ajax-target').offset().top
+        }, 1000);
+
+    });
+    
 }(jQuery));

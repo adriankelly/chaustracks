@@ -4,97 +4,229 @@
     Author URL: http://adriankelly.net
     Description: Tunes from around the web, delivered to your doorstep
  */
+/**
+ * Global
+ */
+/*
+.active {
+    border: 3px solid green;
+}
+.notActive {
+    border: 3px solid red;
+}
+*/
+/**
+ * Styles
+ */
+/* Styles-Global */
 body {
   font: 62.5% "Lato", sans-serif;
   color: #333;
   max-width: 1280px;
   padding-bottom: 20px; }
 
-@media (min-width: 768px) {
-  .jumbotron {
-    height: 520px;
-    background: transparent; }
-    .jumbotron h1 {
-      font-size: 9rem;
-      line-height: 7rem;
-      font-weight: 500; }
-    .jumbotron small {
-      font-size: 1.8rem;
-      font-weight: 300;
-      padding-left: 6px;
-      letter-spacing: 0.4rem; } }
-
-@media (min-width: 768px) {
-  .bg {
-    background: url("images/vinyl1.jpg") no-repeat center center;
-    width: 100%;
-    z-index: -1;
-    height: 520px;
-    position: fixed;
-    top: 0;
-    left: 0; } }
-
-@media (min-width: 768px) {
-  .titles-wrap {
-    margin-top: 330px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    color: #fff;
-    /*background: rgba(255, 255, 255, 0.3);*/
-    display: inline-block; } }
-
-@media (min-width: 768px) {
-  header {
-    height: 520px; } }
-
 .container {
   max-width: 960px; }
 
-@media (min-width: 768px) {
-  .nav .current-menu-item > a {
-    background: white;
-    font-size: 1.8rem; } }
+.wrap-bg {
+  background: #eee;
+  padding: 30px;
+  margin-bottom: 30px; }
+  .wrap-bg .about-content {
+    font-size: 1.40625rem; }
+    @media (min-width: 768px) {
+      .wrap-bg .about-content {
+        font-size: 1.75781rem; } }
+
+/* Fluid Videos */
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0; }
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* Header */
+header {
+  height: 200px;
+  max-width: 100%; }
+  @media (min-width: 768px) {
+    header {
+      height: 300px; } }
+  @media (min-width: 992px) {
+    header {
+      height: 520px; } }
+
+.bg {
+  background-color: #eee;
+  background: url("images/vinyl1.jpg") no-repeat center center;
+  width: 100%;
+  display: block;
+  z-index: -1;
+  height: 200px;
+  position: fixed;
+  top: 0;
+  left: 0; }
+  @media (min-width: 768px) {
+    .bg {
+      height: 300px; } }
+  @media (min-width: 992px) {
+    .bg {
+      height: 520px; } }
+
+.jumbotron {
+  height: 200px;
+  background-color: transparent;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0; }
+  .jumbotron h1 {
+    font-size: 4.5rem;
+    line-height: 2rem;
+    font-weight: 500; }
+  .jumbotron small {
+    font-size: 1.125rem;
+    font-weight: 300;
+    margin-left: 3px; }
+  @media (min-width: 768px) {
+    .jumbotron {
+      height: 300px; }
+      .jumbotron h1 {
+        font-size: 6.75rem;
+        line-height: 4rem; }
+      .jumbotron small {
+        font-size: 1.6875rem;
+        margin-left: 4px; } }
+  @media (min-width: 992px) {
+    .jumbotron {
+      height: 520px; }
+      .jumbotron h1 {
+        font-size: 10.125rem;
+        line-height: 7rem; }
+      .jumbotron small {
+        font-size: 2.025rem;
+        padding-left: 6px;
+        letter-spacing: 0.7rem; } }
+
+.titles-wrap {
+  background: rgba(255, 255, 255, 0.4);
+  margin-top: 100px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  display: block;
+  color: black; }
+  .titles-wrap h1 {
+    padding-top: 6px; }
+  @media (min-width: 768px) {
+    .titles-wrap {
+      margin-top: 140px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 10px; }
+      .titles-wrap h1 {
+        padding-top: 4px; } }
+  @media (min-width: 992px) {
+    .titles-wrap {
+      margin-top: 320px;
+      padding-left: 30px; }
+      .titles-wrap h1 {
+        padding-top: 0; } }
+
+/* Navigation */
+.icon-bar {
+  background-color: black;
+  /* hamburger menu */ }
+
+.nav .navbar-collapse {
+  padding-left: 0; }
+.nav .current-menu-item a {
+  background: white; }
+.nav a {
+  color: black; }
 
 .nav-pills {
   background-color: #DBDBDB; }
   .nav-pills li a {
-    padding-left: 40px;
-    padding-right: 40px;
-    font-size: 1.3rem; }
-
-.navbar-collapse {
-  padding-left: 2px; }
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.6rem; }
 
 .nav-wrap {
-  min-height: 80px; }
+  min-height: 50px; }
   .nav-wrap .affix {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000; }
+  @media (min-width: 768px) {
+    .nav-wrap {
+      min-height: 80px; } }
 
-/* MAY NEED TO REMOVE THE DIV REFERENCE ONCE
-CONTENT IS DISPLAYED ACCORDING TO THE POST
-TEMPLATE */
+/**
+ * Post-Template
+ */
+.post h2 a {
+  font-size: 1.8rem;
+  color: #E5232D; }
+.post .post-byline {
+  font-size: 1.125rem; }
+.post .post-byline-comments {
+  display: block; }
+.post .post-text {
+  font-size: 1.40625rem; }
 @media (min-width: 768px) {
   .post {
-    margin-bottom: 40px; }
+    margin-bottom: 80px; }
+    .post h2 a {
+      font-size: 2.25rem; }
     .post .post-byline {
-      font-size: 1.2rem;
+      font-size: 1.40625rem;
       margin-left: 2px; }
-      .post .post-byline a {
-        display: block; }
-    .post div {
-      font-size: 1.5rem; } }
-.post iframe {
+    .post .post-text {
+      font-size: 1.75781rem; } }
+@media (min-width: 768px) {
+  .post h2 a {
+    font-size: 2.52rem; }
+  .post .post-byline {
+    font-size: 1.575rem;
+    margin-left: 2px; }
+  .post .post-text {
+    font-size: 1.82813rem; } }
+
+/**
+ * Single Post
+ */
+.single-post article {
+  margin-bottom: 15px; }
+
+/**
+ * Archives
+ */
+@media (min-width: 768px) {
+  .archives-month {
+    font-size: 2.3rem;
+    height: 5rem;
+    /* Increases height and font of select dropdown */ } }
+
+/**
+ * Footer
+ */
+.infinite-load-wrap {
   display: block;
-  margin: 0 auto;
-  max-width: 445px;
-  max-height: 300px; }
+  text-align: center; }
+  .infinite-load-wrap a {
+    font-size: 2.5rem;
+    color: #333; }
 
 .copyright {
   margin-left: 50px;
-  font-size: 1.3rem; }
+  font-size: 1.125rem; }
 
 /*# sourceMappingURL=style.css.map */

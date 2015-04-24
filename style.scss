@@ -5,10 +5,39 @@
     Description: Tunes from around the web, delivered to your doorstep
  */
 
+
+
+
+/**
+ * Global
+ */
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+
+
 $font-stack: 'Lato', sans-serif;
 $primary-color: #333;
-$post-title-color: tomato;
-$breakpoint-tablet: 768px;
+$post-heading-color: #E5232D;
+
+$primary-heading-size: 4.5rem;
+$post-heading-size: $primary-heading-size * 0.4;
+$post-byline-size: $primary-heading-size * 0.25;
+$post-content-size: $primary-heading-size * 0.3125;
+
+/*
+.active {
+    border: 3px solid green;
+}
+.notActive {
+    border: 3px solid red;
+}
+*/
+/**
+ * Styles
+ */
+
+/* Styles-Global */
 
 body {
     font: 62.5% $font-stack;
@@ -17,82 +46,183 @@ body {
     padding-bottom: 20px;
 }
 
-.jumbotron {
+.container {
+    max-width: 960px;
+}
+
+.wrap-bg {
+    background: #eee;
+    padding: 30px;
+    margin-bottom: 30px;
+        .about-content {
+            font-size: $post-content-size;
+            @media (min-width: $breakpoint-tablet) {
+                font-size: $post-content-size * 1.25;
+            }
+        }
+}
+
+/* Fluid Videos */
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/* Header */
+
+header {
+    height: 200px;
+    max-width: 100%;
 
     @media (min-width: $breakpoint-tablet) {
+        height: 300px;
+    }
+    @media (min-width: $breakpoint-desktop) {
         height: 520px;
-        background: transparent;
+    }
+}
+
+
+.bg {
+    background-color: #eee;
+    background: url('images/vinyl1.jpg') no-repeat center center;
+    width: 100%;
+    display: block;;
+    z-index: -1;
+    height: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    @media (min-width: $breakpoint-tablet) {
+        height: 300px;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        height: 520px;
+    }   
+}
+
+
+.jumbotron {
+    height: 200px;
+    background-color: transparent;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
 
         h1 {
-            font-size: 9rem;
-            line-height: 7rem;
+            font-size: $primary-heading-size;
+            line-height: 2rem;
             font-weight: 500;
         }
+
         small {
-            font-size: 1.8rem;
+            font-size: $post-byline-size;
             font-weight: 300;
-            padding-left: 6px;
-            letter-spacing: 0.4rem;
+            margin-left: 3px;
+        }
+
+    @media (min-width: $breakpoint-tablet) {
+        height: 300px;
+
+        h1 {
+            font-size: $primary-heading-size * 1.5; 
+            line-height: 4rem;
+        }
+        small {
+            font-size: $post-byline-size * 1.5;
+            margin-left: 4px;
+        }
+    }
+    
+
+    @media (min-width: $breakpoint-desktop) {
+        height: 520px;
+
+        h1 {
+            font-size: $primary-heading-size * 2.25;
+            line-height: 7rem;
+            
+        }
+
+        small {
+            font-size: $post-byline-size * 1.8;
+            padding-left: 6px; 
+            letter-spacing: 0.7rem; 
         }
     }       
 }
 
 
-
-.bg {
-    
-    @media (min-width: $breakpoint-tablet) {
-        background: url('images/vinyl1.jpg') no-repeat center center;
-        width: 100%;
-        z-index: -1;
-        height: 520px;
-        position: fixed;
-        top: 0;
-        left: 0;
-    }    
-}
-
-
-
 .titles-wrap {
+    background: rgba(255, 255, 255, 0.4);
+    margin-top: 100px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    display: block;
+    color: black;
+
+    h1 {
+        padding-top: 6px;
+    }
 
     @media (min-width: $breakpoint-tablet) {
-        margin-top: 330px;
-        padding-left: 30px;
-        padding-right: 30px;
+        margin-top: 140px;
+        padding-left: 20px;
+        padding-right: 20px;
         padding-bottom: 10px;
-        color: #fff;
-        /*background: rgba(255, 255, 255, 0.3);*/
-        display: inline-block;
-    }
-}
 
-
-header {
-    @media (min-width: $breakpoint-tablet) {
-        height: 520px;
-    }
-}
-
-
-.container {
-    max-width: 960px;
-}
-
-
-
-.nav {
-    
-    @media (min-width: $breakpoint-tablet) {
-        .current-menu-item {
-            > a {
-                background: white;
-                font-size: 1.8rem;
-            }
+        h1 {
+            padding-top: 4px;
         }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        margin-top: 320px;
+        padding-left: 30px; 
+        h1 {
+            padding-top: 0;
+        }
+    }    
+
+}
 
 
 
+
+/* Navigation */
+
+
+.icon-bar {
+    background-color: black; /* hamburger menu */
+}
+
+
+
+.nav {   
+    .navbar-collapse {
+        padding-left: 0;
+    }
+
+    .current-menu-item a {
+        background: white;
+    }
+
+    a {
+        color: black;
     }
 }
 
@@ -100,19 +230,16 @@ header {
 .nav-pills {
     background-color: #DBDBDB;
     li a {
-        padding-left: 40px;
-        padding-right: 40px;
-        font-size: 1.3rem;
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: 1.6rem;
     }
 }
 
 
-.navbar-collapse {
-  padding-left: 2px;
-}
-
 .nav-wrap {
-    min-height: 80px;
+
+    min-height: 50px;
 
     .affix {
             position: fixed;
@@ -120,46 +247,109 @@ header {
             width: 100%;
             z-index: 1000;
     }
-}
-
-
-/* MAY NEED TO REMOVE THE DIV REFERENCE ONCE
-CONTENT IS DISPLAYED ACCORDING TO THE POST
-TEMPLATE */
 
     @media (min-width: $breakpoint-tablet) {
-        
-        .post {
-            margin-bottom: 40px;
-
-            .post-byline {
-                font-size: 1.2rem;
-                margin-left: 2px;
-                
-                a {
-                    display: block;
-                }
-            }
-
-            div {
-                font-size: 1.5rem;
-            }
-        }
+        min-height: 80px;
     }
-
-
-
-.post iframe {
-  display: block;
-  margin: 0 auto;
-  max-width: 445px;
-  max-height: 300px;
 }
 
 
+
+/**
+ * Post-Template
+ */
+
+.post {
+    h2 a {
+        font-size: $post-heading-size;
+        color: $post-heading-color;    
+    }
+    
+
+    .post-byline {
+        font-size: $post-byline-size;
+    }
+
+    .post-byline-comments {
+        display: block;
+    }
+
+    .post-text {
+        font-size: $post-content-size;
+    }
+
+    @media (min-width: $breakpoint-tablet) {        
+        margin-bottom: 80px;
+
+        h2 a {
+            font-size: $post-heading-size * 1.25;
+        }
+        .post-byline {
+            font-size: $post-byline-size * 1.25;
+            margin-left: 2px;
+        }
+        .post-text {
+            font-size: $post-content-size * 1.25;
+        }
+    }
+    @media (min-width: $breakpoint-tablet) {        
+        h2 a {
+            font-size: $post-heading-size * 1.4;
+        }
+        .post-byline {
+            font-size: $post-byline-size * 1.4;
+            margin-left: 2px;
+        }
+        .post-text {
+            font-size: $post-content-size * 1.3;
+        }
+    }
+}
+
+
+/**
+ * Single Post
+ */
+
+.single-post article {
+    margin-bottom: 15px;
+}
+
+
+
+
+/**
+ * Archives
+ */
+
+
+.archives-month {
+    @media (min-width: $breakpoint-tablet) { 
+        font-size: 2.3rem;        
+        height: 5rem;
+        /* Increases height and font of select dropdown */
+    }
+}
+
+
+
+
+/**
+ * Footer
+ */
+
+.infinite-load-wrap {
+    display: block; 
+    text-align: center;
+    a {
+        font-size: 2.5rem;
+        color: $primary-color;
+    }
+}
+
 .copyright {
-  margin-left: 50px;
-  font-size: 1.3rem;
+    margin-left: 50px;
+    font-size: $post-byline-size;
 }
 
 

@@ -1,10 +1,8 @@
     
-        <!-- <div class="infinite-load" style="display: none;"> -->
+        <div class="infinite-load-wrap">
             <!-- Append AJAX loading image here -->
-            <a class="infinite-load" style="display: none">Loading... <img class="infinite-load-img" src="http://localhost/chaustracks/wp-content/themes/chaustracks/images/ajax-loader.gif" /></a>
-        <!-- </div> -->
-
-
+            <a class="infinite-load" style="display: none">Loading... <img src="http://localhost/chaustracks/wp-content/themes/chaustracks/images/ajax-loader.gif" /></a>
+        </div>
 
         <footer>
             <hr>
@@ -13,8 +11,6 @@
     
     </div> <!-- /container -->
 
-
-<!-- load_home_posts infinite scroll -->
 
 <script type="text/javascript">
     <?php   if (!is_single() || !is_page()): ?>
@@ -28,7 +24,7 @@
                             return false;
                         }else{
                             loadArticle(count);
-                            $('.infinite-load').css('display', 'initial').hide('900'); //ajax loader image
+                            $('.infinite-load').css('display', 'initial').hide(700); //ajax loader image
                         }
                     count++;
                     }
@@ -54,7 +50,6 @@
 
 
 <?php wp_footer(); ?>
-
 
 
     </body>

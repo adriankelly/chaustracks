@@ -12,7 +12,7 @@
 
 
         // My CSS
-        wp_enqueue_style( 'style_css', get_template_directory_uri() . '/style.css' );
+        wp_enqueue_style( 'style_css', get_template_directory_uri() . '/style.min.css' );
 
     } // End of function theme_styles
     add_action( 'wp_enqueue_scripts', 'theme_styles' );
@@ -41,11 +41,11 @@
 
 
         // My JS
-        wp_enqueue_script( 'script_js', get_template_directory_uri() . '/script.js', array( 'jquery' ), null, true );
+        wp_enqueue_script( 'script_js', get_template_directory_uri() . '/script.min.js', array( 'jquery' ), null, true );
         
         // Archives AJAX load posts
         if ( is_page( 'archives' ) ) {
-            wp_enqueue_script( 'archives_js', get_template_directory_uri() . '/archives.js', array( 'jquery' ), null, true );
+            wp_enqueue_script( 'archives_js', get_template_directory_uri() . '/archives.min.js', array( 'jquery' ), null, true );
             wp_localize_script( 'archives_js', 'archivesAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ))); 
         }
 

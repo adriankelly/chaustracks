@@ -19,7 +19,7 @@
 <body>
 
     <header>
-        <div class="bg"></div> <!-- .bg -->
+        <div class="bg">&nbsp</div> <!-- .bg -->
         <div class="jumbotron">
             
             <div class="titles-wrap">
@@ -33,7 +33,7 @@
 
     <div class="nav-wrap">
         
-        <nav class="nav nav-pills" data-spy="affix" data-offset-top="660">
+        <nav class="nav nav-pills" data-spy="affix" data-offset-top="380">
             <div class="container">
             
                 <div class="navbar-header">

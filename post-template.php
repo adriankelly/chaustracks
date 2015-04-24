@@ -17,7 +17,7 @@
         <p class="post-byline">
             Posted by <?php the_author(); ?> 
             on <?php echo the_time('l, F jS, Y'); ?>
-            <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a>
+            <a class="post-byline-comments" href="<?php comments_link(); ?>"><?php comments_number(); ?></a>
         </p>
         
         <?php
@@ -25,12 +25,14 @@
 
             $more = 0;
                 echo '<div class="row">';
-                echo '<div class="col-xs-6">';
+                echo '<div class="col-md-6 notActive">';
+                echo '<div class="videoWrapper ">';
                     the_content('');
+                echo '</div>';
                 echo '</div>';
 
             $more = 1;
-                echo '<div class="col-xs-6">';
+                echo '<div class="col-md-6 post-text">';
                     the_content('',true);
                 echo '</div>';
                 echo '</div>';
