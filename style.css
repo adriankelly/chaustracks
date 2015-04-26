@@ -70,7 +70,7 @@ header {
   display: block;
   z-index: -1;
   height: 200px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0; }
   @media (min-width: 768px) {
@@ -78,7 +78,8 @@ header {
       height: 300px; } }
   @media (min-width: 992px) {
     .bg {
-      height: 520px; } }
+      height: 520px;
+      position: fixed; } }
 
 .jumbotron {
   height: 200px;

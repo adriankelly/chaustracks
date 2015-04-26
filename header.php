@@ -33,7 +33,7 @@
 
     <div class="nav-wrap">
         
-        <nav class="nav nav-pills" data-spy="affix" data-offset-top="380">
+        <nav class="nav nav-pills" data-spy="affix" data-offset-top="300">
             <div class="container">
             
                 <div class="navbar-header">
