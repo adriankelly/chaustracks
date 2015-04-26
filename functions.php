@@ -12,10 +12,11 @@
 
 
         // My CSS
-        wp_enqueue_style( 'style_css', get_template_directory_uri() . '/style.min.css' );
+        wp_enqueue_style( 'style_css', get_template_directory_uri() . '/style.css' );
 
     } // End of function theme_styles
     add_action( 'wp_enqueue_scripts', 'theme_styles' );
+
 
 
 
@@ -41,13 +42,14 @@
 
 
         // My JS
-        wp_enqueue_script( 'script_js', get_template_directory_uri() . '/script.min.js', array( 'jquery' ), null, true );
+        wp_enqueue_script( 'script_js', get_template_directory_uri() . '/script.js', array( 'jquery' ), null, true );
         
         // Archives AJAX load posts
         if ( is_page( 'archives' ) ) {
-            wp_enqueue_script( 'archives_js', get_template_directory_uri() . '/archives.min.js', array( 'jquery' ), null, true );
-            wp_localize_script( 'archives_js', 'archivesAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ))); 
-        }
+            wp_enqueue_script( 'archives_js', get_template_directory_uri() . '/archives.js', array( 'jquery' ), null, true );
+            // Not sure about this localize expression
+            wp_localize_script( 'archives_js','archivesAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ))); 
+        };
 
     } // End of function theme_js
     add_action( 'wp_enqueue_scripts', 'theme_js');
@@ -78,11 +80,16 @@
  * Fonts
  */
 
-    function theme_enqueue_styles() {
-        wp_enqueue_style('theme-google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700');
-    }
-    add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+    // function theme_enqueue_styles() {
+    //     wp_enqueue_style('theme-google-fonts', 'https://fonts.googleapis.com/css?family=Lato:300,400,700');
+    // }
+    // add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+    function theme_enqueue_styles() {
+        wp_register_style( 'googleFonts', '//fonts.googleapis.com/css?family=Lato:300,400,700' );
+        wp_enqueue_style( 'googleFonts' );
+        }
+    add_action( 'wp_enqueue_scripts', 'theme_load_fonts' );
 
 
 
@@ -97,7 +104,8 @@
         $args = array(
             'posts_per_page' => 100,
             'year' => $_GET['year'],
-            'month' => $_GET['month'],
+            'monthnum' => $_GET['month'],
+            'type' => 'monthly',
             'orderby' => 'date' );
         $wp_query = new WP_Query( $args );
         
@@ -106,8 +114,8 @@
         exit;
         
     } // End of function load_archives
-    add_action('wp_ajax_load_archives', 'load_archives');
-    add_action('wp_ajax_nopriv_load_archives', 'load_archives');
+    add_action('wp_ajax_load_archives', 'load_archives'); // Logged in users
+    add_action('wp_ajax_nopriv_load_archives', 'load_archives'); // Guest users
 
 
 

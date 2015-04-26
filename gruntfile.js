@@ -1,26 +1,23 @@
 module.exports = function(grunt) {
 
-    // 1. All configuration goes here 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
-
-            // 2. Configuration for concatinating files goes here.
-
 
 
 // AUTOPREFIXER
         autoprefixer: {
 
-          options: {
-            // Task-specific options go here.
-            browsers: ['last 2 versions']
-          },
-          multiple_files: {
-            expand: true,
-            flatten: true,
-            src: 'preprod/css/*.css', // -> src/css/file1.css, src/css/file2.css
-            dest: 'preprod/grunt/css/ap/' // -> dest/css/file1.css, dest/css/file2.css
+            options: {
+                browsers: ['last 2 versions']
+            },
+            
+            multiple_files: {
+                expand: true,
+                flatten: true,
+                src: ['*.css', '/css/*.css'], // -> src/css/file1.css, src/css/file2.css
+
+                // Modify last folder name
+                dest: 'grunting/css/' // -> dest/css/file1.css, dest/css/file2.css
           }
         },
 
@@ -30,9 +27,9 @@ module.exports = function(grunt) {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'preprod/img/',
+                    cwd: 'images/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'build/img/'
+                    dest: 'grunting/images/'
                 }]
             }
         },
@@ -42,41 +39,54 @@ module.exports = function(grunt) {
 
     concat: {
         css: {
-           src: [
-                 'preprod/grunt/css/ap/*'
-                ],
-            dest: 'preprod/grunt/css/combined.css'
-        },
-        js : {
-            src : [
-                'preprod/js/*.js'
+            src: [
+                'css/bootstrap.min.css',
+                'grunting/css/*'
             ],
-            dest : 'preprod/grunt/js/combined.js'
-        }
+            dest: 'grunting/css/combined.css'
+        },
+        js1 : {
+            src: [
+                'archives.js',
+            ],
+            dest: 'grunting/js/archives.js' 
+        },
+        js2: {
+            src: [
+                // 'bootstrap.min.js',
+                'script.js'
+            ],
+            dest: 'grunting/js/combined.js',         
+        },
+            /* files: {
+                'grunting/js/archives.js' : ['archives.js'],
+                'grunting/js/combined.js' : ['script.js', 'js/*.js'] //includes bootstrap */
     },
 
 
 // MINIFY CSS
 
-    cssmin : {
-            css:{
-                src: 'preprod/grunt/css/combined.css',
-                dest: 'build/css/style.min.css'
+    cssmin: {
+        add_banner: {
+            options: {
+                banner: '/* Theme Name: chaustracks Author: Adrian Kelly */' //NOTE: This isn't working anymore!!!!!
+            },
+            files: {
+                'grunting/style.min.css': ['grunting/css/combined.css'] //includes bootstrap
             }
-        },
-
+        }
+    },
 
 // MINIFY JS
 
     uglify: {
         js: {
-            src: 'preprod/grunt/js/combined.js',
-            dest: 'build/js/script.min.js'
+            files: {
+                'grunting/archives.min.js': ['grunting/js/archives.js'],
+                'grunting/script.min.js': ['grunting/js/combined.js']
             }
+        }
     }
-
-
-
 
 });
 
@@ -88,6 +98,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['autoprefixer', 'imagemin', 'concat:css', 'cssmin:css', 'concat:js', 'uglify']);
+    grunt.registerTask('default', ['autoprefixer', 'imagemin', 'concat', 'cssmin', 'uglify']);
 
 };

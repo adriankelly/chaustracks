@@ -96,7 +96,6 @@ header {
 
 
 .bg {
-    background-color: #eee;
     background: url('images/vinyl1.jpg') no-repeat center center;
     width: 100%;
     display: block;;
@@ -118,7 +117,7 @@ header {
 
 .jumbotron {
     height: 200px;
-    background-color: transparent;
+    background-color: transparent !important;
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
@@ -176,7 +175,7 @@ header {
     color: black;
 
     h1 {
-        padding-top: 6px;
+        padding-top: 7px;
     }
 
     @media (min-width: $breakpoint-tablet) {
@@ -186,7 +185,7 @@ header {
         padding-bottom: 10px;
 
         h1 {
-            padding-top: 4px;
+            padding-top: 5px;
         }
     }
 
@@ -194,7 +193,7 @@ header {
         margin-top: 320px;
         padding-left: 30px; 
         h1 {
-            padding-top: 0;
+            padding-top: 1px;
         }
     }    
 

@@ -1,7 +1,7 @@
     
         <div class="infinite-load-wrap">
             <!-- Append AJAX loading image here -->
-            <a class="infinite-load" style="display: none">Loading... <img src="http://localhost/chaustracks/wp-content/themes/chaustracks/images/ajax-loader.gif" /></a>
+            <a class="infinite-load" style="display: none">Loading... <img src="/wp-content/themes/chaustracks/images/ajax-loader.gif" /></a>
         </div>
 
         <footer>

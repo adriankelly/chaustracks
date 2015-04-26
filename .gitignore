@@ -1,5 +1,7 @@
 .gitignore
 .sass-cache/
+grunting/
+npm-debug.log
 node_modules/
-preprod/
-build/
+ctwp.sql
+gruntfile.js
